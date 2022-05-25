@@ -5,7 +5,7 @@ import motor.motor_asyncio
 # connect to localhost
 client = motor.motor_asyncio.AsyncIOMotorClient('mongodb://localhost:27017/')
 
-database = client.TodoList
+database = client.TodoList #create table
 collection = database.todo
 
 # main functions for db

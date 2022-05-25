@@ -13,14 +13,14 @@ function App() {
   /*useEffect allows us to read todo list from database */
   // Read all todo items
   useEffect(() => {
-    axios.get('https://localhost:8000/api/todo')
+    axios.get('http://localhost:8000/api/todo')
       .then(res => {setTodoList(res.data)
       })
   });
 
   // Post a todo items
   const addTodoHandler = () => {
-    axios.post('https://localhost:8000/api/todo', {'title': title, 'description': desc})
+    axios.post('http://localhost:8000/api/todo', {'title': title, 'description': desc})
     .then(res => console.log(res))
   };
 
@@ -29,7 +29,7 @@ function App() {
       <h1 className="car text-white bg-primary mb-1" styleName="max-width: 20rem;">Task Manager</h1>
       <h6 className="card text-white bg-primary mb-3">FastAPI - React - MongoDB</h6>
     <div className="card-body">
-      <h5 className="card text-white bg-dark mb-3">Add Your Task</h5>
+      <h5 className="card text-white bg-dark mb-3">Add Task</h5>
       <span className="card-text">
         <input className="mb-2 form-control titleIn" onChange={event => setTitle(event.target.value)} placeholder='Title'/>
         <input className="mb-2 form-control desIn" onChange={event => setDesc(event.target.value)} placeholder='Description'/>

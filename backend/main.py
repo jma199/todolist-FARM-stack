@@ -65,3 +65,4 @@ async def delete_todo(title):
     if response:
         return "Successfully deleted todo item"
     raise HTTPException(404, f"there is no todo item with the title {title}")
+    
